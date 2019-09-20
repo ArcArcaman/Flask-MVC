@@ -1,0 +1,5 @@
+# Dictionary of URLs
+app:        # endpoint
+  rule: "/" # url rule
+  view: app # view function name
+            # options can be added here

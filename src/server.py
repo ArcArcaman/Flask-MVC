@@ -33,6 +33,8 @@ for module in moduleNames:
         app.register_blueprint(getattr(root.urls, "root"), url_prefix=app.config["ROOT_NAME"], template_folder='root')
 
 if __name__ == "__main__":
+    if(app.config["DEBUG"]==True): print(" * ROOT_NAME: {0}".format(app.config["ROOT_NAME"]))
+
     if app.config.get("HOST") != None and app.config.get("PORT") != None:
         app.run(host=app.config["HOST"], port=app.config["PORT"])
     elif app.config.get("HOST") == None and app.config.get("PORT") != None:
