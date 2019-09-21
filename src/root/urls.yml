@@ -1,5 +1,5 @@
 # Dictionary of URLs
 index:        # endpoint
-  rule: "/"   # url rule
+  rule: /     # url rule
   view: index # view function name
               # options can be added here

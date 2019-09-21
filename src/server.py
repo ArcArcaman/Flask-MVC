@@ -23,6 +23,9 @@ if app.config.get("APPS") == None:
     app.config["APPS"] = ['root']
 moduleNames = app.config["APPS"]
 
+#Support for Regex Convertion in URL Routing
+app.url_map.converters['regex'] = utils.RegexConverter
+
 for module in moduleNames:
     globals()[module] = import_module(module)
 
