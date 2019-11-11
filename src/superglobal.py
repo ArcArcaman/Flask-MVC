@@ -1,11 +1,14 @@
 from flask import Flask
 import yaml, os
+import database.connections as dbconn
 
 __temp_app = Flask(__name__)
 
 __temp_app.config.from_pyfile('config.cfg')
 
 FLASK_CONFIG = __temp_app.config
+
+DATABASES = dbconn.connection_all
 
 USER_GLOBAL = None
 
