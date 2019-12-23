@@ -1,5 +1,0 @@
-# Dictionary of URLs
-api:        # endpoint
-  rule: /   # url rule
-  view: api # view function name
-            # options can be added here

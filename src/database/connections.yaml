@@ -1,7 +1,0 @@
-- CONNECTION: "ODBC"
-  NAME: "TestDB"
-  DRIVER: "{SQLite3 ODBC Driver}"
-  HOST: "localhost"
-  DB: "test.db"
-  USERNAME: ""
-  PASSWORD: ""
