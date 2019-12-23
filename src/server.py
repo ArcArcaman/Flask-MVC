@@ -2,8 +2,14 @@ from importlib import import_module
 
 from flask import Flask
 
+from flask_wtf.csrf import CSRFProtect
+
+from flask_cors import CORS
+
 import utils
 import sys, os
+
+import database.connections as dbconn
 
 sys.path.insert(0,os.path.dirname(os.path.realpath(__file__)))
 sys.path.insert(0,os.path.join(os.path.dirname(os.path.realpath(__file__)), "lib"))
@@ -23,8 +29,24 @@ if app.config.get("APPS") == None:
     app.config["APPS"] = ['root']
 moduleNames = app.config["APPS"]
 
+if app.config.get("CORS_EN") == None:
+    app.config["CORS_EN"] = False
+
+if app.config.get("CORS_EN") == True:
+    CORS(app)
+
+if app.config.get("CSRF_EN") == None:
+    app.config["CSRF_EN"] = False
+
+if app.config.get("CSRF_EN") == True:
+    CSRFProtect().init_app(app)
+
 #Support for Regex Convertion in URL Routing
 app.url_map.converters['regex'] = utils.RegexConverter
+
+#Start all Database Connections
+print("database connector version: " + dbconn.version())
+dbconn.connect_all()
 
 for module in moduleNames:
     globals()[module] = import_module(module)

@@ -1,4 +1,15 @@
 # Flask-MVC
- MVC template for Flask microframework with lightweight microservice tools.
+##### MVC template for python Flask microframework with lightweight microservice tools.
 
-***Announcements: Documentations and guide to be made later as the authors are busy currently. Sorry ;)***
+[Flask](https://github.com/pallets/flask) microframework is a very powerful server framework but it gets messy when files are placed in one python file. In **Flask-MVC**, we create simple configurations and and provide organized structure to ease and systemize the Flask project you are making. We based on the popular MVC pattern to organize our files. 
+
+**Flask-MVC** also provides a simple microservice architecture tools which allow you to use names to reference a specific IP and Port. (Docker and Kubernetes maybe included in future improvement.)
+
+## Installation
+
+Simply clone the project with git to begin.
+
+```sh
+git clone https://github.com/ArcArcaman/Flask-MVC.git
+```
+
