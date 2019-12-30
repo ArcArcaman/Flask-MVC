@@ -29,5 +29,5 @@ with open(urls_source_path) as source:
             )
         else:
             exec(
-                "{0}.add_url_rule({rule}, {endpoint}, {view}, **{options})".format(directory, rule=details['rule'], endpoint=endpoint, view=details['view'], options=details['options'])
+                "{0}.add_url_rule('{rule}', '{endpoint}', {view}, **{options})".format(directory, rule=details['rule'], endpoint=endpoint, view=details['view'], options=details['options'])
             )
