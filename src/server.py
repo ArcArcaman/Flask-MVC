@@ -42,6 +42,12 @@ if app.config.get("CSRF_EN") == True:
 #Support for Regex Convertion in URL Routing
 app.url_map.converters['regex'] = utils.RegexConverter
 
+# imports all listed extensions
+extensions = app.config.get('EXTENSIONS')
+if extensions != None:
+    for extension in extensions:
+        globals()['extensions.' + extension] = import_module('extensions.' + extension)
+
 for module in moduleNames:
     globals()[module] = import_module(module)
 
