@@ -7,6 +7,6 @@ Jinja2==2.11.3
 MarkupSafe==1.1.1
 PyYAML==5.4
 six==1.13.0
-waitress==1.4.3
+waitress==2.1.1
 Werkzeug==0.16.0
 WTForms==2.2.1
