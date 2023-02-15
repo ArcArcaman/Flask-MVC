@@ -8,5 +8,5 @@ MarkupSafe==1.1.1
 PyYAML==5.4
 six==1.13.0
 waitress==1.4.3
-Werkzeug==0.16.0
+Werkzeug==2.2.3
 WTForms==2.2.1
